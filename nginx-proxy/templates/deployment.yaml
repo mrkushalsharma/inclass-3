@@ -1,29 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.nginx.name }}
+  name: nginx
   labels:
-{{- toYaml .Values.nginx.labels | nindent 4 }}
+    app: nginx
 spec:
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-{{- toYaml .Values.nginx.labels | nindent 6 }}
-  replicas: {{ .Values.nginx.replicas }}
+      app: nginx
   template:
     metadata:
       labels:
-{{- toYaml .Values.nginx.labels | nindent 8 }}
+        app: nginx
     spec:
       containers:
-      - name: {{ .Values.nginx.name }}
-        image: {{ .Values.nginx.image.repository }}:{{ .Values.nginx.image.tag }}
-        imagePullPolicy: {{ .Values.nginx.image.pullPolicy }}
-        envFrom:
-          - configMapRef:
-              name: {{ .Values.nginx.name }}-configmap
-              optional: false
-          - secretRef:
-              name: {{ .Values.nginx.name }}-secret
-              optional: false
-        ports:
-        - containerPort: {{ .Values.nginx.containerPorts.http }}
+        - name: nginx
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: 80
+          resources: {{- toYaml .Values.resources | nindent 12 }}
