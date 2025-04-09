@@ -6,6 +6,6 @@ description: wordpress stack
 keywords:
   - nginx
   - wordpress
-  - mariadb
+  - mysql
 maintainers:
-  - name: Kushal Sharmas
+  - name: Kushal Sharma

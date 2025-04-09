@@ -5,6 +5,6 @@ name: wordpress-db
 description: wordpress database for wp stack
 keywords:
   - wordpress
-  - mariadb
+  - mysql
 maintainers:
   - name: Mohammad Salim
