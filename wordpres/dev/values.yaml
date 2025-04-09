@@ -13,7 +13,7 @@ wp:
     ## KEY: "value"
     APP_ENV: "dev"
     WORDPRESS_DB_HOST: "wp-database.wpdb.svc.cluster.local"
-    WORDPRESS_DB_NAME: "wordpress"
-    WORDPRESS_DB_USER: "wordpress"
+    WORDPRESS_DB_NAME: C0923597
+    WORDPRESS_DB_USER: C0923597
   containerPorts:
       http: 80
