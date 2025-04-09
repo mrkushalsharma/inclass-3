@@ -6,7 +6,7 @@ db:
     stack: wordpress
   image:
     repository: mysql
-    tag: latest
+    tag: 5.6.20
     pullPolicy: Always
   replicas: 1
   configmap:
