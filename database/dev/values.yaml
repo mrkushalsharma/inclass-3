@@ -5,10 +5,10 @@ db:
     env: dev
     stack: wordpress
   image:
-    repository: mongo
+    repository: mysql
     tag: latest
     pullPolicy: Always
-  replicas: 2
+  replicas: 1
   configmap:
     ## KEY: "value"
     MYSQL_DATABASE: wordpress
